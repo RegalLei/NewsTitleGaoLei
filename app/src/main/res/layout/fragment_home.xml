@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="#ff00"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60sp">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="3"
+            android:text="今日头条"
+            android:textSize="27sp"
+            android:layout_width="0sp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_marginRight="15sp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/huaq"
+            android:layout_weight="5"
+            android:layout_width="0sp"
+            android:layout_height="50sp">
+
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/search_discover_normal"
+                android:layout_width="40sp"
+                android:layout_height="50sp" />
+            <EditText
+                android:layout_marginLeft="15sp"
+                android:background="@null"
+                android:focusable="true"
+                android:hint="搜你需要的"
+                android:layout_width="150sp"
+                android:layout_height="50sp" />
+        </LinearLayout>
+    </LinearLayout>
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <android.support.design.widget.TabLayout
+          android:id="@+id/home_tablayout"
+          app:tabGravity="fill"
+          app:tabSelectedTextColor="#ff00"
+          app:tabTextColor="#000"
+          android:layout_width="match_parent"
+          android:layout_height="51sp">
+      </android.support.design.widget.TabLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/home_vpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+   </LinearLayout>
+
+</LinearLayout>
