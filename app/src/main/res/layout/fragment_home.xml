@@ -52,14 +52,14 @@
            android:layout_width="match_parent"
            android:layout_height="51sp">
            <ImageView
-               android:id="@+id/keywords_photo"
+               android:id="@+id/hometitle_photo"
                android:layout_alignParentRight="true"
                android:src="@drawable/toast_keywords_add"
                android:layout_width="50sp"
                android:layout_height="50sp"
                />
       <android.support.design.widget.TabLayout
-          android:layout_toLeftOf="@id/keywords_photo"
+          android:layout_toLeftOf="@id/hometitle_photo"
           android:id="@+id/home_tablayout"
           app:tabGravity="fill"
           app:tabSelectedTextColor="#ff00"
