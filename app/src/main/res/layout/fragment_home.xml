@@ -47,7 +47,19 @@
        android:orientation="vertical"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="51sp">
+           <ImageView
+               android:id="@+id/keywords_photo"
+               android:layout_alignParentRight="true"
+               android:src="@drawable/toast_keywords_add"
+               android:layout_width="50sp"
+               android:layout_height="50sp"
+               />
       <android.support.design.widget.TabLayout
+          android:layout_toLeftOf="@id/keywords_photo"
           android:id="@+id/home_tablayout"
           app:tabGravity="fill"
           app:tabSelectedTextColor="#ff00"
@@ -55,6 +67,7 @@
           android:layout_width="match_parent"
           android:layout_height="51sp">
       </android.support.design.widget.TabLayout>
+       </RelativeLayout>
         <android.support.v4.view.ViewPager
             android:id="@+id/home_vpager"
             android:layout_width="match_parent"
