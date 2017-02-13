@@ -17,26 +17,31 @@
             android:layout_height="100sp">
 
         <ImageView
+            android:id="@+id/DSF_phone"
             android:layout_marginLeft="15sp"
-            android:src="@drawable/cellphoneicon_login_profile_press"
+            android:src="@drawable/cellphoneicon_login_profile"
             android:layout_width="100sp"
             android:layout_height="100sp" />
             <ImageView
+                android:id="@+id/DSF_weixin"
                 android:layout_marginLeft="15sp"
-                android:src="@drawable/weixinicon_login_profile_press"
+                android:src="@drawable/weixin_allshare_normal"
                 android:layout_width="100sp"
                 android:layout_height="100sp" />
             <ImageView
+
+                android:id="@+id/DSF_qq"
                 android:layout_marginLeft="15sp"
-                android:src="@drawable/qqicon_login_profile_press"
+                android:src="@drawable/qq_allshare_normal"
                 android:layout_width="100sp"
                 android:layout_height="100sp" />
             <ImageView
+                android:layout_gravity="center_vertical"
                 android:layout_marginRight="15sp"
                 android:layout_marginLeft="10sp"
-                android:src="@drawable/right_arrow_topic_pressed"
+                android:src="@drawable/arrow_all_normal"
                 android:layout_width="30sp"
-                android:layout_height="100sp" />
+                android:layout_height="30sp" />
         </LinearLayout>
         <TextView
             android:textColor="#bfbfbf"
@@ -100,36 +105,42 @@
         android:layout_height="match_parent">
 
        <TextView
+           android:id="@+id/my_tv_xxtz"
            android:gravity="center_vertical"
            android:text="消息通知"
            android:layout_weight="1"
            android:layout_width="match_parent"
            android:layout_height="30sp" />
         <TextView
+            android:id="@+id/my_tv_ttsc"
             android:gravity="center_vertical"
             android:text="头条商城"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="30sp" />
         <TextView
+            android:id="@+id/my_tv_jdtg"
             android:gravity="center_vertical"
             android:text="京东特供"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="30sp" />
         <TextView
+            android:id="@+id/my_tv_wybl"
             android:gravity="center_vertical"
             android:text="我要爆料"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="30sp" />
         <TextView
+            android:id="@+id/my_tv_yhfk"
             android:gravity="center_vertical"
             android:text="用户反馈"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="30sp" />
         <TextView
+            android:id="@+id/my_tv_xtsz"
             android:gravity="center_vertical"
             android:text="系统设置"
             android:layout_weight="1"
