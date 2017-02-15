@@ -62,8 +62,8 @@ public class FragmentVideo extends Fragment{
     private void initData() {
         fragmentList = new ArrayList<Fragment>();
         for (int i = 0; i <title.length ; i++) {
-            TitleFragment fragment=new TitleFragment();
-            fragmentList.add(fragment);
+            Title1Fragment fragment1=new Title1Fragment();
+            fragmentList.add(fragment1);
         }
     }
 

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gl.newtitlegaolei.R;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +23,15 @@ import java.util.List;
  * 班级：1501A
  */
 public class FragmentHome extends Fragment{
-    private String[] title={"推荐","热点","阳光宽频","北京","社会","娱乐","问答","图片","科技","汽车","体育","财经","军事","国际","段子","趣图","美女","健康","正能量","特卖","房产"};
+    private String[] title={"精选","汽车","电影","笑话","体育","娱乐","论坛","教育","科技","彩票","财经","NBA",
+            "数码","移动","游戏","时尚","情感","电台","房产"};
     private TabLayout home_tablayout;
     private ViewPager home_vpager;
     private List<TitleFragment> fragmentList;
-
+    private PullToRefreshListView pull_listview;
+    private String url[]={"T1370583240249","T1348654060988","T1348648650048","T1350383429665", "T1348649079062","T1348648517839","T1349837670307","T1348654225495",
+            "T1348649580692", "T1356600029035","T1348648756099","T1348654151579","T1348649145984","T1348649776727","T1351233117091","T1348654151579",
+            "T1348650593803", "T1348650839000","T1379038288239","5YyX5Lqs"};
 
     @Nullable
     @Override
@@ -61,16 +66,22 @@ public class FragmentHome extends Fragment{
     }
 
 
+
     private void initKun() {
         home_tablayout = (TabLayout) getActivity().findViewById(R.id.home_tablayout);
         home_vpager = (ViewPager) getActivity().findViewById(R.id.home_vpager);
+        pull_listview = (PullToRefreshListView) getActivity().findViewById(R.id.pull_listview);
      }
 
     private void initData() {
         fragmentList = new ArrayList<>();
         for (int i = 0; i <title.length ; i++) {
             TitleFragment fragment=new TitleFragment();
+            Bundle bundle=new Bundle();
+            bundle.putString("url",url[i]);
+            fragment.setArguments(bundle);
             fragmentList.add(fragment);
+
         }
     }
 
