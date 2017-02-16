@@ -37,7 +37,7 @@
             <EditText
                 android:layout_marginLeft="15sp"
                 android:background="@null"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="搜你需要的"
                 android:layout_width="150sp"
                 android:layout_height="50sp" />
@@ -62,6 +62,7 @@
           android:layout_toLeftOf="@id/hometitle_photo"
           android:id="@+id/home_tablayout"
           app:tabGravity="fill"
+          app:tabIndicatorColor="#00000000"
           app:tabSelectedTextColor="#ff00"
           app:tabTextColor="#000"
           android:layout_width="match_parent"

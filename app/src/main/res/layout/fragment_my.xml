@@ -38,10 +38,10 @@
             <ImageView
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="15sp"
-                android:layout_marginLeft="10sp"
+                android:layout_marginLeft="5sp"
                 android:src="@drawable/arrow_all_normal"
-                android:layout_width="30sp"
-                android:layout_height="30sp" />
+                android:layout_width="20sp"
+                android:layout_height="20sp" />
         </LinearLayout>
         <TextView
             android:textColor="#bfbfbf"

@@ -22,11 +22,11 @@ import java.util.List;
  * 班级：1501A
  */
 public class FragmentVideo extends Fragment{
-    private String title[]={"推荐","音乐","搞笑","社会","小品","生活","影视","娱乐","呆萌","游戏","原创","开眼","再看一遍","火山直播"};
+    private String title[]={"热点视频","娱乐视频","搞笑视频","精品视频"};
     private TabLayout video_tablayout;
     private ViewPager video_vpager;
     private List<Fragment> fragmentList;
-
+    private String url[]={"V9LG4B3A0","V9LG4CHOR","V9LG4E6VR","00850FRB"};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,6 +63,9 @@ public class FragmentVideo extends Fragment{
         fragmentList = new ArrayList<Fragment>();
         for (int i = 0; i <title.length ; i++) {
             Title1Fragment fragment1=new Title1Fragment();
+            Bundle bundle=new Bundle();
+            bundle.putString("url",url[i]);
+            fragment1.setArguments(bundle);
             fragmentList.add(fragment1);
         }
     }

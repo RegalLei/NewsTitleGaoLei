@@ -24,14 +24,14 @@ import java.util.List;
  */
 public class FragmentHome extends Fragment{
     private String[] title={"精选","汽车","电影","笑话","体育","娱乐","论坛","教育","科技","彩票","财经","NBA",
-            "数码","移动","游戏","时尚","情感","电台","房产"};
+            "数码","移动","游戏","时尚","情感"};
     private TabLayout home_tablayout;
     private ViewPager home_vpager;
     private List<TitleFragment> fragmentList;
     private PullToRefreshListView pull_listview;
     private String url[]={"T1370583240249","T1348654060988","T1348648650048","T1350383429665", "T1348649079062","T1348648517839","T1349837670307","T1348654225495",
-            "T1348649580692", "T1356600029035","T1348648756099","T1348654151579","T1348649145984","T1348649776727","T1351233117091","T1348654151579",
-            "T1348650593803", "T1348650839000","T1379038288239","5YyX5Lqs"};
+            "T1348649580692", "T1356600029035","T1348648756099","T1348649145984","T1348649776727","T1351233117091","T1348654151579",
+            "T1348650593803", "T1348650839000"};
 
     @Nullable
     @Override
@@ -81,7 +81,6 @@ public class FragmentHome extends Fragment{
             bundle.putString("url",url[i]);
             fragment.setArguments(bundle);
             fragmentList.add(fragment);
-
         }
     }
 
