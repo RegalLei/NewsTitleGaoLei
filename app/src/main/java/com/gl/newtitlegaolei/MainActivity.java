@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FragmentHome homeFreagment;
     FragmentVideo videoFragment;
     FragmentAttention attentionFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,15 +89,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void addfragment(Fragment f) {
         FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
-        if(!f.isAdded()){
+        if (!f.isAdded()) {
             fr.replace(R.id.frag_main_content, f);
         }
-        if(fragment!=null){
+        if (fragment != null) {
             fr.hide(fragment);
         }
-       fr.show(f);
+        fr.show(f);
         fr.commit();
-        fragment=f;
+        fragment = f;
     }
 
     private void initDianji() {
@@ -107,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addlist();
     }
 
-    public void setStaue(int id){
-        switch (id){
+    public void setStaue(int id) {
+        switch (id) {
             case R.id.btn_main_my:
                 btn_main_my.setSelected(true);
                 btn_main_attention.setSelected(false);
@@ -147,8 +148,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn_main_home:
                 setStaue(R.id.btn_main_home);
-                if(homeFreagment!=null){
-                    homeFreagment=new FragmentHome();
+                if (homeFreagment != null) {
+                    homeFreagment = new FragmentHome();
                 }
                 addfragment(new FragmentHome());
                 btn_main_my.setTextColor(Color.BLACK);
@@ -158,8 +159,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_video:
                 setStaue(R.id.btn_main_video);
-                if(videoFragment!=null){
-                    videoFragment=new FragmentVideo();
+                if (videoFragment != null) {
+                    videoFragment = new FragmentVideo();
                 }
                 addfragment(new FragmentVideo());
                 btn_main_my.setTextColor(Color.BLACK);
@@ -169,8 +170,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_attention:
                 setStaue(R.id.btn_main_attention);
-                if(attentionFragment!=null){
-                    attentionFragment=new FragmentAttention();
+                if (attentionFragment != null) {
+                    attentionFragment = new FragmentAttention();
                 }
                 addfragment(new FragmentAttention());
                 btn_main_video.setTextColor(Color.BLACK);
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn_main_my:
                 setStaue(R.id.btn_main_my);
-                if(myFragment==null){
+                if (myFragment == null) {
                     myFragment = new FragmentMy();
                 }
                 addfragment(myFragment);

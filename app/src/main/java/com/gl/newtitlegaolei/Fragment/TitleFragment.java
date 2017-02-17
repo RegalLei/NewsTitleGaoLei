@@ -40,21 +40,20 @@ public class TitleFragment extends Fragment implements PullToRefreshBase.OnRefre
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        url = getArguments().get("url").toString();
-        homeUrl = "http://c.m.163.com/nc/article/headline/"+url+"/"+page+"-20.html";
-        HttpUtil.httputilload(this, homeUrl,Bean.class);
+        public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+            url = getArguments().get("url").toString();
+            homeUrl = "http://c.m.163.com/nc/article/headline/"+url+"/"+page+"-20.html";
+            HttpUtil.httputilload(this, homeUrl,Bean.class);
 //        pull_listview = (PullToRefreshListView) view.findViewById(R.id.pull_listview);
-        initKun();
-        initData();
+            initKun();
+            initData();
 
 
     }
 
     private void initData() {
         adapter = new TitleAdapter(getActivity());
-
         pull_listview.setAdapter(adapter);
     }
 

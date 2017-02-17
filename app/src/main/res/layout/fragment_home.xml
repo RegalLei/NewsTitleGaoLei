@@ -12,6 +12,7 @@
         android:layout_height="60sp">
 
         <TextView
+            android:textColor="#ffff"
             android:textStyle="bold"
             android:layout_marginLeft="20sp"
             android:layout_marginTop="15dp"
@@ -30,7 +31,7 @@
             android:layout_height="50sp">
 
             <ImageView
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/search_discover_normal"
                 android:layout_width="40sp"
                 android:layout_height="50sp" />
