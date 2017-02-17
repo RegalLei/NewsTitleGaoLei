@@ -10,17 +10,7 @@ import java.util.List;
 public class Bean{
 
 
-    private List<T1370583240249Bean> T1370583240249;
 
-    public List<T1370583240249Bean> getT1370583240249() {
-        return T1370583240249;
-    }
-
-    public void setT1370583240249(List<T1370583240249Bean> T1370583240249) {
-        this.T1370583240249 = T1370583240249;
-    }
-
-    public  class T1370583240249Bean {
         /**
          * postid : CDB6USRS000187OR
          * hasCover : false
@@ -381,4 +371,4 @@ public class Bean{
             }
         }
     }
-}
+

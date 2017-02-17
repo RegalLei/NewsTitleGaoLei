@@ -1,11 +1,16 @@
 package com.gl.newtitlegaolei.HttpUtils;
 
-import com.gl.newtitlegaolei.Beans.Bean;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * 作者：高镭
@@ -13,12 +18,29 @@ import org.xutils.x;
  * 班级：1501A
  */
 public class HttpUtil {
-   public static void httputilload(final CallbackUtils callbackUtils,String homeurl){
+   public static <T>void httputilload(final CallbackNewsData callbackUtils,
+                                   String homeurl,final Class<T> clazz){
         x.http().get(new RequestParams(homeurl), new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Bean bean = new Gson().fromJson(result, Bean.class);
-                callbackUtils.success(bean);
+                Gson gson=new Gson();
+                ArrayList<T> t=new ArrayList<T>();
+                try {
+                    JSONObject jsonObject=new JSONObject(result);
+                    Iterator<String> keys = jsonObject.keys();
+                    while(keys.hasNext()){
+                        String next = keys.next();
+                        JSONArray jsonArray=jsonObject.optJSONArray(next);
+                        for (int i = 0; i <jsonArray.length() ; i++) {
+                            JSONObject object = jsonArray.optJSONObject(i);
+                          T t1 = gson.fromJson(object.toString(), clazz);
+                           t.add(t1);
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                callbackUtils.success(t);
             }
 
             @Override
@@ -37,7 +59,9 @@ public class HttpUtil {
             }
         });
     }
-    public interface CallbackUtils<T>{
-        void success(T t);
+
+    public interface CallbackNewsData<T> {
+        void success(ArrayList<T> t);
     }
+
 }

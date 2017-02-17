@@ -1,6 +1,7 @@
 package com.gl.newtitlegaolei.Home;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -20,7 +21,7 @@ import java.util.List;
 public class TitleAdapter extends BaseAdapter {
 
     private Context context ;
-    private List<Bean.T1370583240249Bean> lists=new ArrayList<>();
+    private List<Bean> lists=new ArrayList<>();
     public TitleAdapter(Context context) {
         this.context = context;
     }
@@ -32,7 +33,8 @@ public class TitleAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return null;
+
+        return lists.get(i);
     }
 
     @Override
@@ -55,12 +57,13 @@ public class TitleAdapter extends BaseAdapter {
         return view;
     }
 
-    public void addData(List<Bean.T1370583240249Bean> list,boolean isNeedClear) {
+    public void addData(List<Bean> list, boolean isNeedClear) {
         if(list!=null){
             if(isNeedClear){
                 lists.clear();
             }
            lists.addAll(list);
+            Log.e("myMessage", "dataBeens size " + lists.size());
         }
     }
 
