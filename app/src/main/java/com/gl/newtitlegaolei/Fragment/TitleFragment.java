@@ -1,11 +1,13 @@
 package com.gl.newtitlegaolei.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.gl.newtitlegaolei.Beans.Bean;
 import com.gl.newtitlegaolei.Home.TitleAdapter;
@@ -15,6 +17,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 作者：高镭
@@ -27,10 +30,10 @@ public class TitleFragment extends Fragment implements PullToRefreshBase.OnRefre
     private String url;
     private View view;
     private int page=0;
-    private TitleAdapter adapter;
     private boolean isNeedClear = false;
     private String homeUrl;
-
+    private TitleAdapter adapter;
+    private List<Bean> blist=new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,7 +66,15 @@ public class TitleFragment extends Fragment implements PullToRefreshBase.OnRefre
         pull_listview = (PullToRefreshListView) view.findViewById(R.id.pull_listview);
         pull_listview.setMode(PullToRefreshBase.Mode.BOTH);
         pull_listview.setOnRefreshListener(this);
-
+        pull_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String urls = blist.get(i-1).getUrl();
+                Intent intent =new Intent(getActivity(),HomeWebViewActivity.class);
+                intent.putExtra("urls",urls);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -76,13 +87,14 @@ public class TitleFragment extends Fragment implements PullToRefreshBase.OnRefre
 
     @Override
     public void onPullUpToRefresh(PullToRefreshBase refreshView) {
-        page+=20;
+        page+=5;
         isNeedClear=false;
         HttpUtil.httputilload(this,homeUrl,Bean.class);
     }
 
     @Override
     public void success(ArrayList bean) {
+        blist=bean;
         adapter.addData(bean,false);
         adapter.notifyDataSetChanged();
         pull_listview.onRefreshComplete();

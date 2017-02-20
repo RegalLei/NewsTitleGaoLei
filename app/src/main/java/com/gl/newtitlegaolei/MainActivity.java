@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initWidgit();
         initDianji();
+        if (homeFreagment == null) {
+            homeFreagment = new FragmentHome();
+        }
         addfragment(new FragmentHome());
     }
 
@@ -56,8 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_main_video = (Button) findViewById(R.id.btn_main_video);
         btn_main_attention = (Button) findViewById(R.id.btn_main_attention);
         btn_main_my = (Button) findViewById(R.id.btn_main_my);
-
-        fragmentManager = getSupportFragmentManager();
 
         fragmentHome = new FragmentHome();
         fragmentVideo = new FragmentVideo();
@@ -96,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fr.hide(fragment);
         }
         fr.show(f);
-        fr.commit();
         fragment = f;
+        fr.commit();
     }
 
     private void initDianji() {
@@ -148,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn_main_home:
                 setStaue(R.id.btn_main_home);
-                if (homeFreagment != null) {
+                if (homeFreagment == null) {
                     homeFreagment = new FragmentHome();
                 }
                 addfragment(new FragmentHome());
@@ -159,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_video:
                 setStaue(R.id.btn_main_video);
-                if (videoFragment != null) {
+                if (videoFragment == null) {
                     videoFragment = new FragmentVideo();
                 }
                 addfragment(new FragmentVideo());
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_attention:
                 setStaue(R.id.btn_main_attention);
-                if (attentionFragment != null) {
+                if (attentionFragment == null) {
                     attentionFragment = new FragmentAttention();
                 }
                 addfragment(new FragmentAttention());

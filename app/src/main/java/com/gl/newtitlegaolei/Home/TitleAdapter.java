@@ -94,6 +94,9 @@ public class TitleAdapter extends BaseAdapter {
                     rong = new Rong();
                     view = View.inflate(context, R.layout.home_item, null);
                     rong.home_tv_item = (TextView) view.findViewById(R.id.home_tv_item);
+                    rong.item_tv_1= (TextView) view.findViewById(R.id.item_tv_1);
+                    rong.item_tv_2= (TextView) view.findViewById(R.id.item_tv_2);
+                    rong.item_tv_3= (TextView) view.findViewById(R.id.item_tv_3);
                     view.setTag(rong);
                     break;
 
@@ -101,6 +104,9 @@ public class TitleAdapter extends BaseAdapter {
                     rong2 = new Rong2();
                     view=View.inflate(context, R.layout.home_item2, null);
                     rong2.home_tv_item2= (TextView) view.findViewById(R.id.home_tv_item2);
+                    rong2.item_tv2_1= (TextView) view.findViewById(R.id.item_tv2_1);
+                    rong2.item_tv2_2= (TextView) view.findViewById(R.id.item_tv2_2);
+                    rong2.item_tv2_3= (TextView) view.findViewById(R.id.item_tv2_3);
                     rong2.home_iv_item2 = (ImageView) view.findViewById(R.id.home_iv_item2);
                     view.setTag(rong2);
                     break;
@@ -109,6 +115,9 @@ public class TitleAdapter extends BaseAdapter {
                     rong3 = new Rong3();
                     view=View.inflate(context, R.layout.home_item3, null);
                     rong3.home_tv_item3= (TextView) view.findViewById(R.id.home_tv_item3);
+                    rong3.item_tv3_1= (TextView) view.findViewById(R.id.item_tv3_1);
+                    rong3.item_tv3_2= (TextView) view.findViewById(R.id.item_tv3_2);
+                    rong3.item_tv3_3= (TextView) view.findViewById(R.id.item_tv3_3);
                     rong3.home_iv_item3_1 = (ImageView) view.findViewById(R.id.home_iv_item3_1);
                     rong3.home_iv_item3_2 = (ImageView) view.findViewById(R.id.home_iv_item3_2);
                     rong3.home_iv_item3_3 = (ImageView) view.findViewById(R.id.home_iv_item3_3);
@@ -134,13 +143,22 @@ public class TitleAdapter extends BaseAdapter {
                 switch (getItemViewType(position)){
                     case 0:
                         rong.home_tv_item.setText(lists.get(position).getTitle());
+                        rong.item_tv_1.setText(lists.get(position).getSource());
+                        rong.item_tv_2.setText("评论数:"+lists.get(position).getReplyCount()+"");
+                        rong.item_tv_3.setText(lists.get(position).getLmodify());
                         break;
                     case 1:
                         rong2.home_tv_item2.setText(lists.get(position).getTitle());
+                        rong2.item_tv2_1.setText(lists.get(position).getSource());
+                        rong2.item_tv2_2.setText("评论数:"+lists.get(position).getReplyCount()+"");
+                        rong2.item_tv2_3.setText(lists.get(position).getLmodify());
                         ImageLoader.getInstance().displayImage(lists.get(position).getImgsrc(),rong2.home_iv_item2, options);
                         break;
                     case 2:
                         rong3.home_tv_item3.setText(lists.get(position).getTitle());
+                        rong3.item_tv3_1.setText(lists.get(position).getSource());
+                        rong3.item_tv3_2.setText("评论数:"+lists.get(position).getReplyCount()+"");
+                        rong3.item_tv3_3.setText(lists.get(position).getLmodify());
                         ImageLoader.getInstance().displayImage(lists.get(position).getImgextra().get(0).getImgsrc(), rong3.home_iv_item3_1, options);
                         ImageLoader.getInstance().displayImage(lists.get(position).getImgextra().get(1).getImgsrc(), rong3.home_iv_item3_2, options);
                         ImageLoader.getInstance().displayImage(lists.get(position).getImgsrc(), rong3.home_iv_item3_3, options);
@@ -159,16 +177,16 @@ public class TitleAdapter extends BaseAdapter {
     }
 
     static class Rong {
-        TextView home_tv_item;
+        TextView home_tv_item,item_tv_1,item_tv_2,item_tv_3;
     }
 
     static class Rong2 {
-        TextView home_tv_item2;
+        TextView home_tv_item2,item_tv2_1,item_tv2_2,item_tv2_3;
         ImageView home_iv_item2;
     }
 
     static class Rong3 {
-        TextView home_tv_item3;
+        TextView home_tv_item3,item_tv3_1,item_tv3_2,item_tv3_3;
         ImageView home_iv_item3_1;
         ImageView home_iv_item3_2;
         ImageView home_iv_item3_3;

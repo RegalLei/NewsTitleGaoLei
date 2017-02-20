@@ -4,9 +4,46 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:text="1111111111111111111111"
+        android:textColor="#000"
         android:id="@+id/home_tv_item"
         android:textSize="22sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="5sp"
+        android:layout_below="@+id/home_tv_item"
+        android:weightSum="6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_tv_1"
+            android:text="海外网"
+            android:textSize="15sp"
+            android:layout_marginLeft="5sp"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_tv_2"
+            android:text="评论"
+            android:textSize="15sp"
+            android:layout_marginLeft="1sp"
+            android:layout_width="0sp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_tv_3"
+            android:text="10分钟前"
+            android:textSize="15sp"
+            android:layout_marginLeft="1sp"
+            android:layout_width="0sp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </RelativeLayout>

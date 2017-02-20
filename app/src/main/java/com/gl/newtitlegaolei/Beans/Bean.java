@@ -8,9 +8,6 @@ import java.util.List;
  * 班级：1501A
  */
 public class Bean{
-
-
-
         /**
          * postid : CDB6USRS000187OR
          * hasCover : false
