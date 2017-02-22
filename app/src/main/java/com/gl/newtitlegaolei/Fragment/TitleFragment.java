@@ -60,8 +60,6 @@ public class TitleFragment extends Fragment implements PullToRefreshBase.OnRefre
         pull_listview.setAdapter(adapter);
     }
 
-
-
     private void initKun() {
         pull_listview = (PullToRefreshListView) view.findViewById(R.id.pull_listview);
         pull_listview.setMode(PullToRefreshBase.Mode.BOTH);
@@ -70,10 +68,11 @@ public class TitleFragment extends Fragment implements PullToRefreshBase.OnRefre
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String urls = blist.get(i-1).getUrl();
-                Intent intent =new Intent(getActivity(),HomeWebViewActivity.class);
-                intent.putExtra("urls",urls);
-                startActivity(intent);
-            }
+
+                        Intent intent = new Intent(getActivity(), HomeWebViewActivity.class);
+                        intent.putExtra("urls", urls);
+                        startActivity(intent);
+                    }
         });
     }
 

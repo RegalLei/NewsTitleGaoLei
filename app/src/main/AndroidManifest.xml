@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -37,7 +37,16 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".Fragment.HomeWebViewActivity"></activity>
+        <activity android:name=".Fragment.HomeWebViewActivity" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58ad2b03734be41b6c000946"></meta-data>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="d6264305f1c8211728aa10e4232c2656"></meta-data>
+
+        <activity android:name=".Home.HomeChannel"></activity>
     </application>
 
 </manifest>

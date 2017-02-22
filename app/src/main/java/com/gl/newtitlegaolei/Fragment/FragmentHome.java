@@ -1,5 +1,6 @@
 package com.gl.newtitlegaolei.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -9,7 +10,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.gl.newtitlegaolei.Home.HomeChannel;
 import com.gl.newtitlegaolei.R;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -32,6 +35,7 @@ public class FragmentHome extends Fragment{
     private String url[]={"T1370583240249","T1348654060988","T1348648650048","T1350383429665", "T1348649079062","T1348648517839","T1349837670307","T1348654225495",
             "T1348649580692", "T1356600029035","T1348648756099","T1348649145984","T1348649776727","T1351233117091","T1348654151579",
             "T1348650593803", "T1348650839000"};
+    private ImageView hometitle_photo;
 
     @Nullable
     @Override
@@ -70,6 +74,14 @@ public class FragmentHome extends Fragment{
         home_tablayout = (TabLayout) getActivity().findViewById(R.id.home_tablayout);
         home_vpager = (ViewPager) getActivity().findViewById(R.id.home_vpager);
         pull_listview = (PullToRefreshListView) getActivity().findViewById(R.id.pull_listview);
+        hometitle_photo = (ImageView) getActivity().findViewById(R.id.hometitle_photo);
+        hometitle_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(),HomeChannel.class);
+                startActivity(intent);
+            }
+        });
      }
 
     private void initData() {

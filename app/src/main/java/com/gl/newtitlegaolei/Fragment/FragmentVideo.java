@@ -89,7 +89,7 @@ public class FragmentVideo extends Fragment {
 //        }else{
 //            JCMediaManager.instance().mediaPlayer.pause();
 //        }
-//    }
+//    }q
 
     @Override
     public void onHiddenChanged(boolean hidden) {
