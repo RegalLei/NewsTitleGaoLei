@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51sp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="我关注的" />
 
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:id="@+id/attention_in_add"
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:src="@drawable/toast_keywords_add" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100sp">
+        <TextView
+            android:id="@+id/attention_tv_friend"
+            android:textSize="27sp"
+            android:text="好友动态"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/haoyoudongtai"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/attention_tv_res"
+            android:textSize="27sp"
+            android:text="添加更多感兴趣的内容"
+            android:drawableTop="@drawable/add_channel_titlbar_follow_normal"
+            android:background="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </LinearLayout>

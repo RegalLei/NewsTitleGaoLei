@@ -5,7 +5,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -13,13 +14,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".WelcomeActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -41,12 +45,13 @@
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="58ad2b03734be41b6c000946"></meta-data>
+            android:value="58ad2b03734be41b6c000946" />
         <meta-data
             android:name="UMENG_MESSAGE_SECRET"
-            android:value="d6264305f1c8211728aa10e4232c2656"></meta-data>
+            android:value="d6264305f1c8211728aa10e4232c2656" />
 
-        <activity android:name=".Home.HomeChannel"></activity>
+        <activity android:name=".Home.HomeChannel" />
+
     </application>
 
 </manifest>
