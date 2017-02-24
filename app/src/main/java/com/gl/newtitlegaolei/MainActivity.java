@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.gl.newtitlegaolei.Fragment.FragmentAttention;
 import com.gl.newtitlegaolei.Fragment.FragmentHome;
@@ -18,8 +20,10 @@ import com.gl.newtitlegaolei.Fragment.FragmentVideo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private ActionBar supportActionBar;
     private Button btn_main_my;
     private Button btn_main_attention;
     private Button btn_main_video;
@@ -38,19 +42,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FragmentHome homeFreagment;
     FragmentVideo videoFragment;
     FragmentAttention attentionFragment;
+    private RelativeLayout main_daynight;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
         initWidgit();
         initDianji();
-        if (homeFreagment == null) {
-            homeFreagment = new FragmentHome();
+        if(MyApp.flag){
+            if (homeFreagment == null) {
+                homeFreagment = new FragmentHome();
+            }
+            addfragment(homeFreagment);
+            btn_main_home.setSelected(true);
+            MyApp.flag=false;
+        }else {
+            btn_main_my.setSelected(true);
         }
-        addfragment(new FragmentHome());
+
+
     }
 
 
@@ -60,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_main_attention = (Button) findViewById(R.id.btn_main_attention);
         btn_main_my = (Button) findViewById(R.id.btn_main_my);
 
+
         fragmentHome = new FragmentHome();
         fragmentVideo = new FragmentVideo();
         fragmentAttention = new FragmentAttention();
@@ -67,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void addlist() {
-        btn_main_home.setSelected(true);
         for (int i = 0; i < 4; i++) {
             showFragment = new ShowFragment();
             switch (i) {
@@ -152,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (homeFreagment == null) {
                     homeFreagment = new FragmentHome();
                 }
-                addfragment(new FragmentHome());
+                addfragment(homeFreagment);
                 btn_main_my.setTextColor(Color.BLACK);
                 btn_main_attention.setTextColor(Color.BLACK);
                 btn_main_home.setTextColor(Color.RED);
@@ -163,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (videoFragment == null) {
                     videoFragment = new FragmentVideo();
                 }
-                addfragment(new FragmentVideo());
+                addfragment(videoFragment);
                 btn_main_my.setTextColor(Color.BLACK);
                 btn_main_attention.setTextColor(Color.BLACK);
                 btn_main_home.setTextColor(Color.BLACK);
@@ -174,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (attentionFragment == null) {
                     attentionFragment = new FragmentAttention();
                 }
-                addfragment(new FragmentAttention());
+                addfragment(attentionFragment);
                 btn_main_video.setTextColor(Color.BLACK);
                 btn_main_home.setTextColor(Color.BLACK);
                 btn_main_my.setTextColor(Color.BLACK);
@@ -194,7 +207,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-
-
 }
+
 

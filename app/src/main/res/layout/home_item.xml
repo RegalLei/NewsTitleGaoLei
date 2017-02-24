@@ -5,7 +5,6 @@
 
     <TextView
         android:text="1111111111111111111111"
-        android:textColor="#000"
         android:id="@+id/home_tv_item"
         android:textSize="22sp"
         android:layout_width="match_parent"
@@ -21,6 +20,7 @@
         <TextView
             android:id="@+id/item_tv_1"
             android:text="海外网"
+            android:textColor="#545454"
             android:textSize="15sp"
             android:layout_marginLeft="5sp"
             android:layout_width="0sp"
@@ -30,6 +30,7 @@
         <TextView
             android:id="@+id/item_tv_2"
             android:text="评论"
+            android:textColor="#545454"
             android:textSize="15sp"
             android:layout_marginLeft="1sp"
             android:layout_width="0sp"
@@ -39,6 +40,7 @@
         <TextView
             android:id="@+id/item_tv_3"
             android:text="10分钟前"
+            android:textColor="#545454"
             android:textSize="15sp"
             android:layout_marginLeft="1sp"
             android:layout_width="0sp"

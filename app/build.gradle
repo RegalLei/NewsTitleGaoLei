@@ -32,4 +32,5 @@ dependencies {
     compile project(':imageloader')
     compile 'fm.jiecao:jiecaovideoplayer:5.4'
     compile project(':PushSDK')
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

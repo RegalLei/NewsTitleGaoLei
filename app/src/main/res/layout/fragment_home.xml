@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/backgroundColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -63,7 +64,6 @@
           android:layout_toLeftOf="@id/hometitle_photo"
           android:id="@+id/home_tablayout"
           app:tabGravity="fill"
-          app:tabIndicatorColor="#00000000"
           app:tabSelectedTextColor="#ff00"
           app:tabTextColor="#000"
           android:layout_width="match_parent"

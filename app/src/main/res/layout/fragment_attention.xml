@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -26,11 +27,10 @@
         android:layout_height="100sp">
         <TextView
             android:id="@+id/attention_tv_friend"
-            android:textSize="27sp"
+            android:textSize="15sp"
             android:text="好友动态"
             android:gravity="center_vertical"
             android:drawableLeft="@drawable/haoyoudongtai"
-            android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -41,10 +41,9 @@
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/attention_tv_res"
-            android:textSize="27sp"
+            android:textSize="15sp"
             android:text="添加更多感兴趣的内容"
             android:drawableTop="@drawable/add_channel_titlbar_follow_normal"
-            android:background="#ffffff"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
