@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.gl.newtitlegaolei.Beans.VideoBean;
 import com.gl.newtitlegaolei.R;
@@ -66,12 +67,16 @@ public class ViewAdapter extends BaseAdapter {
         vrong=new VRong();
         view=View.inflate(context,R.layout.video_item,null);
         vrong.video_jiecao=  (JCVideoPlayerStandard) view.findViewById(R.id.video_jiecao);
+        vrong.vitem_tv_1= (TextView) view.findViewById(R.id.vitem_tv_1);
+        vrong.vitem_tv_2= (TextView) view.findViewById(R.id.vitem_tv_2);
         view.setTag(vrong);
     }else{
      vrong= (VRong) view.getTag();
     }
         vrong.video_jiecao.setUp(list.get(position).getMp4_url(), JCVideoPlayer.SCREEN_LAYOUT_LIST,list.get(position).getTitle());
         ImageLoader.getInstance().displayImage(list.get(position).getCover(),vrong.video_jiecao.thumbImageView,options);
+        vrong.vitem_tv_1.setText(list.get(position).getTopicName());
+        vrong.vitem_tv_2.setText(":"+list.get(position).getPlayCount());
         return view;
     }
 
@@ -86,5 +91,6 @@ public class ViewAdapter extends BaseAdapter {
 
     static class VRong {
         JCVideoPlayerStandard video_jiecao;
+        TextView vitem_tv_1,vitem_tv_2;
     }
 }

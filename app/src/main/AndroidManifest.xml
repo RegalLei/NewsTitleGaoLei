@@ -16,14 +16,14 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".WelcomeActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tencent1105924500" />
+                <data android:scheme="tencent1105939499" />
             </intent-filter>
         </activity>
         <activity
@@ -51,7 +51,7 @@
             android:value="d6264305f1c8211728aa10e4232c2656" />
 
         <activity android:name=".Home.HomeChannel" />
-
+        <activity android:name=".My.XTsezhi"></activity>
     </application>
 
 </manifest>

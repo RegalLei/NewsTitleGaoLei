@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,4 +9,47 @@
         android:layout_width="match_parent"
         android:layout_height="290sp">
     </fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
+
+    <LinearLayout
+        android:layout_marginTop="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/vitem_tv_1"
+            android:text="一带一路旅行"
+            android:textSize="15sp"
+            android:layout_marginLeft="5sp"
+            android:layout_width="200sp"
+            android:layout_height="25sp" />
+
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:gravity="center_vertical"
+            android:id="@+id/vitem_iv_2"
+            android:src="@drawable/lianxiang"
+            android:layout_marginLeft="40sp"
+            android:layout_width="20sp"
+            android:layout_height="25sp" />
+
+            <TextView
+                android:text="11111"
+                android:id="@+id/vitem_tv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="25sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/vitem_iv_3"
+            android:src="@drawable/new_more_titlebar"
+            android:layout_marginLeft="1sp"
+            android:layout_width="wrap_content"
+            android:layout_height="25sp" />
+    </LinearLayout>
+
 </LinearLayout>

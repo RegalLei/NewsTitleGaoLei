@@ -36,14 +36,21 @@
     </LinearLayout>
 
     <LinearLayout
-
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="100sp"
+            android:src="@drawable/addtodesktop_allshare_normal"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/attention_tv_res"
             android:textSize="15sp"
             android:text="添加更多感兴趣的内容"
-            android:drawableTop="@drawable/add_channel_titlbar_follow_normal"
             android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
